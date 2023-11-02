@@ -80,6 +80,7 @@ class TodoData extends GetxController {
       case TodoStatus.unknown:
         return;
     }
+    // @freezed
     final Todo todoForSave = todo.copyWith(status: nextStatus);
     final responseResult = await todoRepository.updateTodo(todoForSave); //객체 안의 status 바꿔서 update요청
     processResponseResult(responseResult, todoForSave);
@@ -87,6 +88,7 @@ class TodoData extends GetxController {
 
   editTodo(Todo todo) async {
     final result = await WriteTodoBottomSheet(todoForEdit: todo).show();
+    // @freezed
     final Todo todoForSave = todo.copyWith();
 
     result?.runIfSuccess((data) async {

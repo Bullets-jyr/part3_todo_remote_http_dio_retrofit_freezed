@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'vo_todo.freezed.dart';
 part 'vo_todo.g.dart';
 
+// @freezed: 모든 필드들이 바뀌지 않는 불변의 final로만 되어있다면 @freezed를 사용합니다.
 @unfreezed
 class Todo with _$Todo{
 
